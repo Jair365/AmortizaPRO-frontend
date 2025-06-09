@@ -1,0 +1,177 @@
+/* EmisorPage.css */
+.emisor-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Sección de login/register */
+.login-section {
+  width: 50%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.app-title {
+  font-family: 'Courier New', monospace;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: bold;
+  color: #0A1A35;
+  margin-bottom: 1.5rem;
+}
+
+.login-title, .register-title {
+  font-family: 'Courier New', monospace;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #0A1A35;
+  margin-bottom: 0.5rem;
+}
+
+.register-link, .login-link {
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.register-link span, .login-link span {
+  margin-right: 0.3125rem;
+  color: #666;
+}
+
+.register-link a, .login-link a {
+  color: #00DC82;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-link a:hover, .login-link a:hover {
+  text-decoration: underline;
+}
+
+.login-form, .register-form {
+  width: 100%;
+  max-width: 350px;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #0A1A35;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-control::placeholder {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.form-control:focus {
+  border-color: #00DC82;
+}
+
+.form-control.error {
+  border-color: #ff5555;
+}
+
+.error-message {
+  color: #ff5555;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.login-button, .register-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #00DC82;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: 'Courier New', monospace;
+  margin-top: 1.25rem;
+}
+
+.login-button:hover, .register-button:hover {
+  background-color: #00c975;
+}
+
+.back-link {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.back-link a {
+  color: #0A1A35;
+  text-decoration: none;
+  font-size: 0.7rem;
+  transition: color 0.2s;
+}
+
+.back-link a:hover {
+  color: #00DC82;
+  text-decoration: underline;
+}
+
+/* Sección de información de Emisor */
+.emisor-info-section {
+  width: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  position: relative;
+}
+
+.emisor-title {
+  font-family: 'Courier New', monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #0A1A35;
+  margin-bottom: 1.5rem;
+}
+
+.emisor-image {
+  width: 80%;
+  height: 300px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emisor-graphic-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.emisor-graphic-image {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: contain;
+}

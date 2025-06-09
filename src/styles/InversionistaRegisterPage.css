@@ -1,0 +1,62 @@
+/* InversionistaRegisterPage specific styles */
+.register-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.login-link {
+  margin-bottom: 2rem;
+}
+
+.register-button.inversionista-button {
+  margin-top: 1.5rem;
+  background-color: #0A1A35;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.register-button.inversionista-button:hover {
+  background-color: #152b50;
+}
+
+/* Para asegurarnos de que los botones en la página de inversionista sean azules */
+.inversionista-button {
+  background-color: #0A1A35 !important;
+}
+
+.inversionista-button:hover {
+  background-color: #152b50 !important;
+}
+
+.register-button.inversionista-button:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.login-button.inversionista-button {
+  background-color: #0A1A35;
+}
+
+.login-button.inversionista-button:hover {
+  background-color: #152b50;
+}
+
+/* Container adjustments for register page */
+.register-container .form-group:last-of-type {
+  margin-bottom: 0.75rem;
+}
+
+.register-container .form-control {
+  border-radius: 0.5rem;
+  height: 2.75rem;
+}
+
+.inversionista-container a {
+  color: #0A1A35;
+}
+
+.inversionista-container a:hover {
+  color: #152b50;
+}

@@ -1,0 +1,129 @@
+/* HomePage.css */
+.home-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.bg-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-image {
+  max-width: 100%;
+  opacity:100%;
+  filter: brightness(1.05) contrast(0.9);
+}
+
+.content-container {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.title-container {
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.2;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-text {
+  color: #0A1A35;
+  font-size: 3rem; /* Changed from fixed px to relative rem */
+  font-family: 'Courier New', monospace;
+  line-height: 1;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-bottom: 0.625rem;
+}
+
+.welcome-part1 {
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.welcome-part2 {
+  font-style: italic;
+  font-weight: 700;
+  margin-top: 4px;
+  color: #0A1A35;
+  letter-spacing: -0.5px;
+}
+
+.select-role-text {
+  margin-top: 1rem;
+  color: #0A1A35;
+  font-size: 0.875rem;
+  font-family: 'Courier New', monospace;
+}
+
+.buttons-container {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.role-button {
+  width: 16rem;
+  height: 2.75rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 9999px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  font-family: 'Courier New', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.role-button:hover {
+  filter: brightness(105%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.role-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.emisor-button {
+  background-color: #00DC82;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+.inversionista-button {
+  background-color: #0A1A35;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
