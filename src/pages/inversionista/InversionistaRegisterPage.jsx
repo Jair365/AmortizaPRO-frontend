@@ -7,7 +7,7 @@ import '../../styles/InversionistaRegisterPage.css';
 
 const InversionistaRegisterPage = () => {
   const navigate = useNavigate();
-  const { handleSubmit, formErrors, isSubmitting } = useFormContext();
+  const { handleRegister, formErrors, isSubmitting } = useFormContext();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,10 +24,19 @@ const InversionistaRegisterPage = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    handleSubmit(
-      formData, 
-      () => console.log('Registro exitoso:', formData),
-      () => navigate('/inversionista/login') // Redirect to login after successful registration
+    // Pass 'inversionista' as the role
+    handleRegister(
+      formData,
+      'inversionista',
+      () => {
+        // Success callback
+        setTimeout(() => {
+          navigate('/inversionista/login');
+        }, 1500);
+      },
+      (error) => {
+        console.error('Error de registro:', error);
+      }
     );
   };
   

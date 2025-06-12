@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import HomePage from './pages/home';
 import EmisorLoginPage, { EmisorRegisterPage } from './pages/emisor';
 import InversionistaLoginPage, { InversionistaRegisterPage } from './pages/inversionista';
@@ -9,6 +11,7 @@ function App() {
   return (
     <FormProvider>
       <Router>
+        <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/emisor/login" element={<EmisorLoginPage />} />

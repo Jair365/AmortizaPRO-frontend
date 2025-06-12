@@ -7,7 +7,7 @@ import '../../styles/EmisorRegisterPage.css';
 
 const EmisorRegisterPage = () => {
   const navigate = useNavigate();
-  const { handleSubmit, formErrors, isSubmitting } = useFormContext();
+  const { handleRegister, formErrors, isSubmitting } = useFormContext();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,15 +24,25 @@ const EmisorRegisterPage = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    handleSubmit(
-      formData, 
-      () => console.log('Registro exitoso:', formData),
-      () => navigate('/emisor/login') // Redirect to login after successful registration
+    // Pass 'emisor' as the role
+    handleRegister(
+      formData,
+      'emisor',
+      () => {
+        // Success callback
+        setTimeout(() => {
+          navigate('/emisor/login');
+        }, 1500);
+      },
+      (error) => {
+        console.error('Error de registro:', error);
+      }
     );
   };
   
   return (
-    <div className="emisor-container register-container"><div className="login-section">
+    <div className="emisor-container register-container">
+      <div className="login-section">
         <h1 className="app-title">AmortizaPro</h1>
         <h2 className="register-title">Regístrate</h2>
         

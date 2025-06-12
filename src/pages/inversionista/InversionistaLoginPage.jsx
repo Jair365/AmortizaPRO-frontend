@@ -6,7 +6,7 @@ import '../../styles/InversionistaPage.css';
 
 const InversionistaLoginPage = () => {
   const navigate = useNavigate();
-  const { handleSubmit, formErrors, isSubmitting } = useFormContext();
+  const { handleLogin, formErrors, isSubmitting } = useFormContext();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -18,13 +18,19 @@ const InversionistaLoginPage = () => {
       [e.target.name]: e.target.value
     });
   };
-
   const submitForm = (e) => {
     e.preventDefault();
-    handleSubmit(
-      formData, 
-      () => console.log('Login exitoso:', formData),
-      () => console.log('Redirigiendo a dashboard...')
+    handleLogin(
+      formData,
+      'inversionista', // Rol esperado
+      (userData) => {
+        // Success callback
+        console.log('Login exitoso:', userData);
+        // If there's a redirect page later, navigate to it
+      },
+      (error) => {
+        console.error('Error de inicio de sesión:', error);
+      }
     );
   };
 
