@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import InversionistaGraphic from '../../components/InversionistaGraphic';
 import { useFormContext } from '../../context/FormContext';
@@ -11,6 +11,14 @@ const InversionistaLoginPage = () => {
     email: '',
     password: ''
   });
+
+  // Manejar scroll de la página
+  useEffect(() => {
+    document.documentElement.classList.add('no-scroll');
+    return () => {
+      document.documentElement.classList.remove('no-scroll');
+    };
+  }, []);
 
   const handleChange = (e) => {
     setFormData({

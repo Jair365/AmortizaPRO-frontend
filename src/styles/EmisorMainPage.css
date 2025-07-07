@@ -1,0 +1,264 @@
+/* EmisorMainPage.css */
+
+/* Reset específico para esta página */
+.emisor-main-page * {
+  box-sizing: border-box;
+}
+
+.emisor-main-page {
+  width: 100%;
+  background-color: #f0f2f5;
+  flex: 1; /* Ocupa todo el espacio disponible en el contenedor */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Permite que crezca y sea scrolleable */
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  margin-top: 0;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.page-header h1 {
+  font-family: 'Courier New', monospace !important;
+  font-size: 2.5rem !important;
+  color: #2C3E50 !important;
+  font-weight: bold !important;
+  margin: 0 !important;
+  text-align: left !important;
+  line-height: 1.2 !important;
+  flex: 1 !important;
+  order: 1 !important;
+}
+
+.btn-emitir-bono {
+  background-color: #00DC82 !important;
+  color: white !important;
+  border: none !important;
+  padding: 1rem 2rem !important;
+  border-radius: 2rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  font-family: 'Courier New', monospace !important;
+  box-shadow: 0 4px 6px rgba(0, 220, 130, 0.2) !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  order: 2 !important;
+  margin-left: 2rem;
+}
+
+.btn-emitir-bono:hover {
+  background-color: #00c975;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 220, 130, 0.3);
+}
+
+.bonos-section {
+  width: 100%;
+}
+
+.loading-message,
+.empty-message {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+  color: #6c757d;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.bonos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.bono-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.bono-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(45deg, #00DC82, #00c975);
+}
+
+.bono-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-color: #00DC82;
+}
+
+.bono-info {
+  flex: 1;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bono-name {
+  font-family: 'Courier New', monospace;
+  font-size: 1.3rem;
+  color: #2C3E50;
+  margin: 0;
+  font-weight: bold;
+}
+
+.bono-dates {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.date-item {
+  font-size: 0.95rem;
+  color: #6c757d;
+}
+
+.date-item strong {
+  color: #2C3E50;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-ver-detalles {
+  background: linear-gradient(45deg, #2C3E50, #34495E);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(44, 62, 80, 0.2);
+  margin-left: 2rem;
+}
+
+.btn-ver-detalles:hover {
+  background: linear-gradient(45deg, #34495E, #2C3E50);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(44, 62, 80, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .emisor-main-page {
+    padding-top: 70px;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .page-header {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+    grid-row: 1;
+  }
+  
+  .btn-emitir-bono {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    grid-row: 2;
+    justify-self: center;
+  }
+  
+  .bono-card {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+    padding: 1.5rem;
+  }
+  
+  .bono-info {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .bono-dates {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .btn-ver-detalles {
+    align-self: center;
+    margin-left: 0;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.5rem;
+  }
+  
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .btn-emitir-bono {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .bono-card {
+    padding: 1rem;
+  }
+  
+  .bono-name {
+    font-size: 1.1rem;
+  }
+  
+  .date-item {
+    font-size: 0.9rem;
+  }
+}

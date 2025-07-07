@@ -1,0 +1,16 @@
+.emisor-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+
+.emisor-layout-content {
+  flex: 1;
+  margin-top: 60px; /* Espacio para el toolbar fijo */
+  max-height: calc(100vh - 60px); /* Altura máxima disponible debajo del toolbar */
+  overflow-y: auto; /* Scroll vertical cuando el contenido excede la altura */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}

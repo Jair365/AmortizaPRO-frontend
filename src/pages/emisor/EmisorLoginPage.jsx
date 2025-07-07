@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import EmisorGraphic from '../../components/EmisorGraphic';
 import { useFormContext } from '../../context/FormContext';
@@ -11,6 +11,16 @@ const EmisorLoginPage = () => {
     email: '',
     password: ''
   });
+
+  useEffect(() => {
+    // Agregar clase no-scroll al body
+    document.body.classList.add('no-scroll');
+    
+    // Limpiar al desmontar el componente
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -26,7 +36,10 @@ const EmisorLoginPage = () => {
       (userData) => {
         // Success callback
         console.log('Login exitoso:', userData);
-        // If there's a redirect page later, navigate to it
+        // Redirect to main page after successful login
+        setTimeout(() => {
+          navigate('/emisor/main');
+        }, 1500);
       },
       (error) => {
         console.error('Error de inicio de sesión:', error);

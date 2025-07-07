@@ -12,6 +12,18 @@ export const useFormContext = () => useContext(FormContext);
 export const FormProvider = ({ children }) => {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [user, setUser] = useState(null);
+
+  // Cargar usuario del localStorage al inicializar
+  React.useEffect(() => {
+    const token = localStorage.getItem('token');
+    const userData = localStorage.getItem('user');
+    if (token && userData) {
+      setUser(JSON.parse(userData));
+      // Configurar axios para incluir el token en todas las requests
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    }
+  }, []);
   
   // Function to validate form data
   const validateForm = (formData) => {
@@ -88,6 +100,16 @@ export const FormProvider = ({ children }) => {
             setIsSubmitting(false);
             return;
           }
+        }
+
+        // Guardar token y datos del usuario en localStorage
+        if (response.data.token) {
+          localStorage.setItem('token', response.data.token);
+          localStorage.setItem('user', JSON.stringify(response.data.usuario));
+          setUser(response.data.usuario);
+          
+          // Configurar axios para incluir el token en futuras requests
+          axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`;
         }
 
         // Show success notification
@@ -180,15 +202,26 @@ export const FormProvider = ({ children }) => {
     
     setIsSubmitting(false);
   };
+
+  // Function to handle logout
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setUser(null);
+    delete axios.defaults.headers.common['Authorization'];
+    toast.success('Sesión cerrada correctamente');
+  };
   
   // The context value
   const value = {
     formErrors,
     isSubmitting,
+    user,
     validateForm,
     handleSubmit,
     handleLogin,
     handleRegister,
+    handleLogout,
     setFormErrors
   };
   

@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import heroImage from '../../assets/hero-image.png';
 import '../../styles/HomePage.css';
 
 const HomePage = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Agregar clase no-scroll al body
+    document.body.classList.add('no-scroll');
+    
+    // Limpiar al desmontar el componente
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, []);
+
   const handleEmisorClick = () => {
     navigate('/emisor/login');
   };

@@ -1,0 +1,135 @@
+/* Contenedores padre para el layout de la página de detalles */
+.details-page-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.details-main-content {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.details-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 6rem; /* Espacio para el toolbar fijo */
+  font-family: 'Courier New', monospace;
+  background-color: #ffffff;
+}
+
+.btn-regresar {
+  background: none;
+  border: none;
+  color: #2C3E50;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.details-title {
+  font-size: 2.5rem;
+  color: #2C3E50;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-item label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.detail-item input,
+.input-group input {
+  background-color: #f0f2f5;
+  border: 1px solid #e9ecef;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group span {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  border-radius: 0 0.25rem 0.25rem 0;
+  border-left: none;
+  white-space: nowrap;
+}
+
+.input-group input {
+  border-radius: 0.25rem 0 0 0.25rem;
+  border-right: none;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.amortization-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.amortization-table th,
+.amortization-table td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+}
+
+.amortization-table th {
+  background-color: #f8f9fa;
+  color: #2C3E50;
+  font-weight: bold;
+  text-align: center;
+}
+
+.amortization-table tbody tr:nth-child(odd) {
+  background-color: #fdf5e6; /* Naranja claro */
+}
+
+.amortization-table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.flujo-inversionista {
+  color: #28a745; /* Verde */
+}
+
+.flujo-emisor {
+  color: #dc3545; /* Rojo */
+}
+
+.loading-message, .error-message {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.2rem;
+}

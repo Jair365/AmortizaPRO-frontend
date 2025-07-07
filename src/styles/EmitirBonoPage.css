@@ -1,0 +1,210 @@
+/* src/styles/EmitirBonoPage.css */
+
+.emitir-bono-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  font-family: 'Courier New', monospace;
+}
+
+.emitir-bono-main-content {
+  flex: 1;
+  padding: 100px 2rem 60px; /* Padding top para toolbar, bottom para footer */
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative; /* Para el botón de regresar */
+}
+
+.btn-regresar {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  background: none;
+  border: 1px solid #ced4da;
+  color: #6c757d;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+}
+
+.btn-regresar:hover {
+  background: #e9ecef;
+  color: #2C3E50;
+}
+
+.form-container, .recentes-container {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 3rem;
+}
+
+.page-title, .section-title {
+  font-size: 2.2rem;
+  color: #2C3E50;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.bono-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.form-group input, .form-group select {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: 'Courier New', monospace;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: #00DC82;
+  box-shadow: 0 0 0 3px rgba(0, 220, 130, 0.15);
+}
+
+.input-group {
+  display: flex;
+}
+
+.input-group select {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  background-color: #e9ecef;
+}
+
+.input-group input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  flex: 1;
+}
+
+.currency-select {
+  max-width: 80px;
+}
+
+.period-select {
+  max-width: 120px;
+}
+
+.rate-type-select {
+  max-width: 100px;
+}
+
+.btn-guardar-bono {
+  background-color: #00DC82;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+  margin-top: 2rem;
+  display: block;
+  width: fit-content;
+  box-shadow: 0 4px 6px rgba(0, 220, 130, 0.2);
+}
+
+.btn-guardar-bono:hover {
+  background-color: #00c975;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 220, 130, 0.3);
+}
+
+.btn-guardar-bono:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.recentes-table-wrapper {
+  overflow-x: auto;
+}
+
+.recentes-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.recentes-table th, .recentes-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.recentes-table th {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6c757d;
+  font-weight: bold;
+}
+
+.recentes-table td {
+  font-size: 1rem;
+  color: #2C3E50;
+}
+
+.btn-ver-mas-detalles {
+  background: none;
+  border: 1px solid #2C3E50;
+  color: #2C3E50;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+}
+
+.btn-ver-mas-detalles:hover {
+  background: #2C3E50;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bono-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-title, .section-title {
+    font-size: 1.8rem;
+  }
+
+  .btn-regresar {
+    top: 1.5rem;
+    left: 1.5rem;
+    padding: 0.5rem 1rem;
+  }
+}
